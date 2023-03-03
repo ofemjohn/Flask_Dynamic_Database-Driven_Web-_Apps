@@ -10,28 +10,46 @@
         #banner {
             height: 360px;
             width: 100%;
+            object-fit: cover;
+            margin-bottom: 16px;
         }
     </style>
   </head>
 </head>
 <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="/static/banner.jpeg">
     <div class="container">
         <h1 class="text-center mt-2 mb-4">JOHN TEACHER FARMS</h1>
-        <img class="img-fluid" id="banner" src="/static/banner.jpeg">
-        <h2 class="text-center mt-2 mb-4">About</h2>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officia
-            aperiam cupiditate, laudantium impedit qui! Doloremque ipsum voluptatum quae
-            corrupti esse magni neque deleniti qui, asperiores id exercitationem quidem 
-            architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam 
-            dolores eveniet ducimus, reprehenderit excepturi nam eum error, consequuntur 
-            cupiditate eaque corrupti ad porro dolore numquam debitis. Dicta saepe beatae obcaecati?
-        </p>
+        <div class="row mb-3" >  
+            <div class="col-md-6"> <!--colum 6 and md -medium device and bigger -->
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officia
+                aperiam cupiditate, laudantium impedit qui! Doloremque ipsum voluptatum quae
+                corrupti esse magni neque deleniti qui, asperiores id exercitationem quidem 
+                architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam 
+                dolores eveniet ducimus, reprehenderit excepturi nam eum error, consequuntur 
+                cupiditate eaque corrupti ad porro dolore numquam debitis. Dicta saepe beatae obcaecati?   
+            </p>
+            </div>
+            <div class="d-none d-md-block col-md-6"> <!--dont want it to be displayed on mobile, want it to be displayed only on big screen-->
+                <img src="/static/johnteacher.jpg" style="height: 320px; border-radius: 4px;">
+            </div>
+        </div>
         <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-        <p>Show the jobs below</p>
+            <div>
+                {% for job in jobs %}
+                   {% include 'jobItems.html' %}
+                {% endfor %}
+            </div>
         <div class="text-center">
-            <button class="btn btn-secondary btn-lg">contact Us</button>
+            <a type="button" class="btn btn-secondary btn-lg" href="mailto:ofemjohn@gmail.com?
+            subject=Questions%20About%20Job%20Opening&body=name%3A%20%
+            3CYour%20name%3E%0D%0AQuestion%3A%20%3CEnter%20your%
+            20question%20here%3E" 
+            style="color: #000000;" >Contact Us</a>
             <p class="mt-4">copyright 2023, John Teacher</p>
         </div>
     </div>
+    {% include "footer.html" %}
 </body>
 </html>

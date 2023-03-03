@@ -1,0 +1,18 @@
+<div class="border-bottom row" style="margin-bottom: 16px; padding-bottom: 8px;">
+    <div class="col-10">  <!--this div col-9 creates a colum, takes 9 spaces out of the total 12-->
+        <h4 style="margin-bottom: 4px;">
+            {{job.get('title')}}
+        </h4>
+        <div>
+            <b>Location:</b> {{job.get('location')}}
+        </div>
+        {% if 'salary' in job %}
+        <div>
+            <b>Salary:</b> {{job.get('salary')}}
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-2">
+        <a href="mailto:{{job.get('email')}}?subject=Application for a {{job.get('title')}}Job" type="button" class="btn btn-outline-success" style="color: #008080;">Apply</a>
+    </div>
+</div>
