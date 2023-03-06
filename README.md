@@ -7,6 +7,13 @@ https://jovian.com/aakashns/web-development-with-python
 https://jovian.com/aakashns/database-driven-web-applications
 https://mailtolink.me/   #### mail links
 https://excalidraw.com/ ### for mockup sketches 
+https://unsplash.com/s/photos/engineers-working ##### for images
+
+
+## installations
+pip3 install flask_sqlalchemy
+pip3 install mysqlclient
+
 
 
 
